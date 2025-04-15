@@ -9,6 +9,8 @@ import auth from 'api/auth';
 import { useForm } from 'react-hook-form';
 import toast from '../../../../components/utils/toast';
 import { useState } from 'react';
+import { storeAuthUser } from '../../../../components/utils/authUser';
+import { storeAuthToken } from '../../../../components/utils/authToken';
 
 const SignIn = () => {
   const hasMounted = useMounted();
@@ -21,8 +23,8 @@ const SignIn = () => {
       setLoading(true);
       const response = await auth.login({ email: data.email, password: data.password });
       if (response?.data?.success) {
-        window.localStorage.setItem('authUser', JSON.stringify(response?.data?.data?.user));
-        window.localStorage.setItem('authToken', JSON.stringify(response?.data?.data?.tokens));
+        storeAuthUser(response?.data?.data?.user);
+        storeAuthToken(response?.data?.data?.tokens);
 
         // navigate to dashboard
         toast.success("Login successful!");

@@ -8,9 +8,15 @@ import 'styles/theme.scss';
 // import sub components
 import NavbarVertical from '/layouts/navbars/NavbarVertical';
 import NavbarTop from '/layouts/navbars/NavbarTop';
+import useAuth from "../../hooks/useAuth";
 
 export default function DashboardLayout({ children }) {
+	const { isAuthenticated } = useAuth();
 	const [showMenu, setShowMenu] = useState(true);
+
+    // check if user is logged in if not logged-in then redirect to login page
+    if (!isAuthenticated) return null;
+
 	const ToggleMenu = () => {
 		return setShowMenu(!showMenu);
 	};

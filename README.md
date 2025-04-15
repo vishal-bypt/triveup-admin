@@ -1,19 +1,19 @@
-# [DashUI Next.js Free Admin Template](https://dashui-free-nextjs-admin-template.vercel.app/)
+# [Trive Up Admin Panel]()
 
-Dash UI - Next.js Free admin / dashboard template created by [Codescandy](https://codescandy.com/) and available on Github
+Trive Up Admin - Next.js Dashboard created by [BYPT](https://bypt.in/) and available on Github
 
-![dashui-free-nextjs-admin-template](https://user-images.githubusercontent.com/68774600/231716707-3da30d19-b826-4692-b03a-fed41376d250.jpg)
+![Trive Up Admin](https://github.com/vishal-bypt/triveup-admin)
 
-## How to use DashUI?
+## How to use Trive Up?
 
-Clone the Dash UI repo:
-
-```
-git clone https://github.com/codescandy/dashui-free-nextjs-admin-template.git
-```
+Clone the Trive Up UI repo:
 
 ```
-cd dashui-free-nextjs-admin-template
+git clone https://github.com/TriveUp/triveup-admin-web.git
+```
+
+```
+cd triveup-admin-web
 ```
 
 ## 🚀 Getting Started
@@ -75,4 +75,4 @@ Get more power with [Dash UI pro](https://dashui.codescandy.com/) featuring bunc
 | ❌ Layout Options                                                                                  | ✔️ Layout Variations                                                                        |
 | ❌ Priority Support                                                                                | ✔️ Priority Support                                                                         |
 | -                                                                                                  | ✔️ Free Update                                                                              |
-| [Free Download](https://dashui.codescandy.com/free-next-js-admin-dashboard-template.html) | [Get Dash UI](https://dashui.codescandy.com/next-js-admin-dashboard-template.html) |
+

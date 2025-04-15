@@ -1,0 +1,9 @@
+.page-item.custom-color .page-link {
+  color: #212A36 !important;
+  border-color: #212A36 !important;
+}
+
+.page-item.custom-color.active .page-link {
+  background-color: #212A36 !important;
+  color: white !important;
+}

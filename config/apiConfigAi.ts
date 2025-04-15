@@ -2,9 +2,8 @@ import axios from "axios";
 import { getAuthToken, removeAuthToken, storeAuthToken } from "../components/utils/authToken";
 import { removeAuthUser } from "../components/utils/authUser";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://api.example.com/v1";
+const BASE_URL = process.env.NEXT_PUBLIC_AI_API_BASE_URL || "https://apidev.triveup.com/v1";
 // const BASE_URL = "http://localhost:3000/v1";
-console.log("BASE_URL", BASE_URL);
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {

@@ -34,8 +34,32 @@ export const DashboardMenu = [
 		id: uuid(),
 		title: 'Users',
 		icon: 'user',
-		link: '/user'
+		link: '/users'
 	},
+	{
+		id: uuid(),
+		title: 'Waiting List',
+		icon: 'users',
+		link: '/waiting-list'
+	},
+	{
+		id: uuid(),
+		title: 'Articles',
+		icon: 'file-text',
+		link: '/articles'
+	},
+	{
+		id: uuid(),
+		title: 'Events',
+		icon: 'file-text',
+		link: '/events'
+	},
+	{
+		id: uuid(),
+		title: 'AI Data Generator',
+		icon: 'file-text',
+		link: '/ai-data-generator'
+	}
 ];
 
 export default DashboardMenu;

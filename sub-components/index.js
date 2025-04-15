@@ -23,6 +23,8 @@ import GeneralSetting from 'sub-components/settings/GeneralSetting';
 import Notifications from 'sub-components/settings/Notifications';
 import Preferences from 'sub-components/settings/Preferences';
 
+// shared components
+import Spinner from 'sub-components/spinner.js';
 
 export {
    ActiveProjects,
@@ -38,5 +40,6 @@ export {
    EmailSetting,  
    GeneralSetting, 
    Notifications, 
-   Preferences
+   Preferences,
+   Spinner,
 };
