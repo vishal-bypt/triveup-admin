@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "@react-native-async-storage/async-storage": "^2.1.2",
     "@reduxjs/toolkit": "^2.6.1",
     "@vercel/analytics": "^1.0.1",
     "apexcharts": "^3.41.1",
