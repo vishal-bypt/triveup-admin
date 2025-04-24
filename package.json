@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@react-native-async-storage/async-storage": "^2.1.2",
     "@reduxjs/toolkit": "^2.6.1",
     "@vercel/analytics": "^1.0.1",
     "apexcharts": "^3.41.1",
@@ -52,6 +53,7 @@
     "react-feather": "^2.0.10",
     "react-hook-form": "^7.54.2",
     "react-paginate": "^8.3.0",
+    "react-quill": "^2.0.0",
     "react-redux": "^9.2.0",
     "react-responsive": "^9.0.2",
     "react-select": "^5.10.1",

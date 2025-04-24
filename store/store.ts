@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-//import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers } from "redux";
 import { persistReducer } from 'redux-persist';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import { TokenReducer } from "./TokenSlice";
 
 const persistConfig = {
   key: 'root',
-  //storage: AsyncStorage,
+  storage: AsyncStorage,
   blacklist: [],
 };
 

@@ -98,6 +98,18 @@ export default function Articles() {
         deleteArticle(selectedArticle.id);
     };
 
+    const formatDate = (rawDate) => {
+        let date = new Date(rawDate);
+      
+        const formattedDate = new Intl.DateTimeFormat('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }).format(date);
+      
+        return formattedDate;
+      };
+
     const deleteArticle = async (articleId) => {
         try {
             const resp = await articlesApi.deleteArticle(articleId);
@@ -169,7 +181,7 @@ export default function Articles() {
                                             </td>
                                             <td className="text-center">
                                                 <div style={{ textWrap: 'nowrap' }}>
-                                                    {formatDateForInput(article?.date)}
+                                                    {formatDate(article?.date)}
                                                 </div>
                                             </td>
                                             <td className="text-center">

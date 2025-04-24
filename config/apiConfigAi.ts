@@ -30,7 +30,7 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   (response) => response,
   async (error) => {
-    if (error.response?.data?.code === 401) {
+    if (error.response.status === 401) {
       const tokens: any = getAuthToken();
       if (tokens) {
         const refreshToken = tokens?.refresh?.token;

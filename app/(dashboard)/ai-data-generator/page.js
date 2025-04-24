@@ -27,7 +27,7 @@ const customStyles = {
 
 const contentType = [
   { label: "Article", value: "Article" },
-  { label: "Event", value: "Event" },
+  // { label: "Event", value: "Event" },
 ];
 
 export default function AIDataGenerator() {
@@ -47,6 +47,7 @@ export default function AIDataGenerator() {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [subcategories, setSubcategories] = useState([]);
   const [generatedCount, setGeneratedCount] = useState(0);
+  const [response, setResponse] = useState();
 
   useEffect(() => {
     fetchCategories();
@@ -109,7 +110,7 @@ export default function AIDataGenerator() {
       dispatch(startLoading());
       console.log("formData", formData);
       let resp;
-      if(formData.contentType.value === "Event"){
+      if (formData.contentType.value === "Event") {
         resp = await generateAiApi.generateEvents({
           category: formData.category.map((cat) => cat.value).join(","),
           subCategory: formData.subCategory
@@ -117,6 +118,7 @@ export default function AIDataGenerator() {
             .join(","),
           contentType: formData.contentType.value,
         });
+        setResponse(resp?.data?.results);
       } else {
         resp = await generateAiApi.generateArticles({
           category: formData.category.map((cat) => cat.value).join(","),
@@ -125,8 +127,10 @@ export default function AIDataGenerator() {
             .join(","),
           contentType: formData.contentType.value,
         });
+        console.log("resp", resp);
+        setResponse(resp?.data?.results);
       }
-      
+
       dispatch(stopLoading());
       setGeneratedCount(resp?.data?.count);
       if (resp?.status === 200) {
@@ -144,7 +148,7 @@ export default function AIDataGenerator() {
       dispatch(stopLoading());
     }
   };
-
+  console.log("response", response);
   return (
     <Container fluid className="p-6">
       <Form onSubmit={handleSubmit(handleGenerateData)}>
@@ -232,6 +236,36 @@ export default function AIDataGenerator() {
                 <Col lg={12} md={12} sm={12}>
                   <div className="m-0 p-3 d-flex align-items-center justify-content-between">
                     <h3>Generated data: {generatedCount}</h3>
+                  </div>
+                </Col>
+                <Col lg={12} md={12} sm={12}>
+                  <div>
+                    <Table striped bordered hover responsive>
+                      <thead>
+                        <tr>
+                          <th width="20%">Title</th>
+                          <td>{response?.title}</td>
+                        </tr>
+                        <tr>
+                          <th width="20%">Description</th>
+                          <td
+                            className="border px-4 py-2"
+                            style={{ whiteSpace: "pre-line" }}
+                            dangerouslySetInnerHTML={{
+                              __html: response?.content,
+                            }}
+                          />
+                        </tr>
+                        <tr>
+                          <th width="20%">Category</th>
+                          <td>{response?.category}</td>
+                        </tr>
+                        <tr>
+                          <th width="20%">Sub Category</th>
+                          <td>{response?.subcategory}</td>
+                        </tr>
+                      </thead>
+                    </Table>
                   </div>
                 </Col>
               </Row>
